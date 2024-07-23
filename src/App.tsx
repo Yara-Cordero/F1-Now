@@ -15,6 +15,7 @@ function App() {
     <>
     <SearchAppBar />
     <Routes>
+      <Route path="/F1-Now/" element={<HomePage />}/>
       <Route path="/" element={<HomePage />}/>
       <Route path='/race' element={<RacePage />}/>
       <Route path="/standings/constructor" element={<ConstructorStandingsPage />}/>
