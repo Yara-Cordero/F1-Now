@@ -4,10 +4,15 @@ type DriverInfoProps = {
   name: string;
   nationality: string;
   birthDate: string;
-  age: number;
+  permanentNumber: string;
 };
 
-function DriversInfo({ name, nationality, birthDate, age }: DriverInfoProps) {
+function DriversInfo({
+  name,
+  nationality,
+  birthDate,
+  permanentNumber,
+}: DriverInfoProps) {
   return (
     <Grid item xs={12} className="driverInfo" sx={{ margin: "20px" }}>
       <Grid container spacing={1} alignItems="center">
@@ -50,7 +55,7 @@ function DriversInfo({ name, nationality, birthDate, age }: DriverInfoProps) {
               textAlign: "right",
             }}
           >
-            {age}
+            {permanentNumber}
           </Typography>
         </Grid>
       </Grid>

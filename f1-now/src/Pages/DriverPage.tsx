@@ -7,7 +7,7 @@ type DriverType = {
   name: string;
   nationality: string;
   birthDate: string;
-  age: string;
+  permanentNumber: string;
 };
 
 function DriverPage() {
@@ -23,7 +23,7 @@ function DriverPage() {
             name: `${driver.givenName} ${driver.familyName}`,
             nationality: driver.nationality,
             birthDate: driver.dateOfBirth,
-            age: calculateAge(driver.dateOfBirth),
+            permanentNumber: driver.permanentNumber,
           })
         );
 
@@ -33,16 +33,6 @@ function DriverPage() {
         console.error("Error fetching drivers:", error);
       });
   }, []);
-
-  const calculateAge = (birthDate: string) => {
-    const birth = new Date(birthDate);
-    const today = new Date();
-    const age = today.getFullYear() - birth.getFullYear();
-    const m = today.getMonth() - birth.getMonth();
-    return m < 0 || (m === 0 && today.getDate() < birth.getDate())
-      ? age - 1
-      : age;
-  };
 
   return (
     <>
@@ -65,7 +55,7 @@ function DriverPage() {
               name={driver.name}
               nationality={driver.nationality}
               birthDate={driver.birthDate}
-              age={driver.age}
+              permanentNumber={driver.permanentNumber}
             />
           ))}
         </Grid>
