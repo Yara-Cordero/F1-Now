@@ -8,7 +8,21 @@ type DriverInfo = {
     points: string
 }
 
+const teamColors: { [key:string] : string} = {
+    "Mercedes" : "#27F4D2",
+    "Red Bull" : "#3671C6",
+    "McLaren" : "#FF8000",
+    "Ferrari" : "#E8002D",
+    "Aston Martin" : "#229971",
+    "Haas F1 Team" : "#B6BABD", 
+    "RB F1 Team" : "#6692FF",
+    "Alpine F1 Team" : "#FF87BC",
+    "Williams" : "#64C4FF",
+    "Sauber" : "#52E252"
+}
+
 function DriverStandingInfo ( { position, name, team, points} : DriverInfo) {
+    const teamColor = teamColors[team] || "#000000";
 
 
     return (
@@ -25,7 +39,7 @@ function DriverStandingInfo ( { position, name, team, points} : DriverInfo) {
                     </Typography>
                 </Grid>
                 <Grid item xs={5}>
-                    <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '30px' , textAlign: 'left'}}>
+                    <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '30px' , textAlign: 'left', color: teamColor}}>
                         {team}
                     </Typography>
                 </Grid>
