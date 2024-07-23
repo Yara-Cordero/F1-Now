@@ -1,4 +1,4 @@
-import { styled, alpha, createTheme } from '@mui/material/styles';
+import { styled, alpha} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,11 +8,6 @@ import { Typography, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Bebas Neue, Arial',
-  },
-});
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -83,7 +78,7 @@ export default function SearchAppBar() {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleMenuOpen = (event) => {
+  const handleMenuOpen = (event : any) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -91,7 +86,7 @@ export default function SearchAppBar() {
     setAnchorEl(null);
   };
 
-  const handleMenuItemClick = (route) => {
+  const handleMenuItemClick = (route : any) => {
     navigate(route);
     handleMenuClose();
   };

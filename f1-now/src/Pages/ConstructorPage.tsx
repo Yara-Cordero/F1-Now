@@ -14,7 +14,7 @@ function ConstructorPage() {
   useEffect(() => {
     TeamService()
       .getCurrentTeams()
-      .then((response: unknown) => {
+      .then((response) => {
         console.log("API Response:", response);
         const constructors = response.MRData.ConstructorTable.Constructors;
         if (Array.isArray(constructors)) {

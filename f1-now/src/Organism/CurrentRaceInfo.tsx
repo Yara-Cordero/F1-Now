@@ -1,5 +1,4 @@
 import { Grid, Typography } from "@mui/material"
-import { useState } from "react"
 
 type RaceInfo = {
     name: string,

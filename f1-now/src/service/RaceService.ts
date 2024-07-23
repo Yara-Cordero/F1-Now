@@ -11,7 +11,7 @@ const RaceService = (api: AxiosInstance = defaultAxiosInstance) => ({
             const currentDate = new Date();
 
             // Filter races that are scheduled to happen in the future
-            const futureRaces = races.filter(race => {
+            const futureRaces = races.filter((race: { date: string | number | Date; }) => {
                 const raceDate = new Date(race.date);
                 return raceDate > currentDate;
             });
